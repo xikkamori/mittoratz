@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tz2</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $( document ).ready(function(){
+          $( ".parent" ).click(function(){ // вызываем функцию при нажатии на элемент с классом parent
+            $( "*" ).css( "border", "none" ); // с использованием универсального селектора убираем границы у всех элементов
+            $( ".level3" ).parent().css( "border", "1px solid green" ); // устанавливаем родительскому элементу каждого элемента с классом level3 сплошную границу размером 1 пиксель зеленого цвета
+          })
+          $( ".parents" ).click(function(){ // вызываем функцию при нажатии на элемент с классом parents
+            $( "*" ).css( "border", "none" ); // с использованием универсального селектора убираем границы у всех элементов
+            $( ".level3" ).parents().css( "border", "1px solid green" ); // устанавливаем предкам каждого элемента с классом level3 сплошную границу размером 1 пиксель зеленого цвета
+          })
+          $( ".filter" ).click(function(){ // вызываем функцию при нажатии на элемент с классом filter
+            $( "*" ).css( "border", "none" ); // с использованием универсального селектора убираем границы у всех элементов
+            $( "li" ).parent( ".second" ).css( "border", "1px solid green" );  // устанавливаем родительскому элементу каждого элемента <li> сплошную границу размером 1 пиксель зеленого цвета в том случае, если родитель имеет класс second
+          })
+          $( ".filter2" ).click(function(){ // вызываем функцию при нажатии на элемент с классом filter2
+            $( "*" ).css( "border", "none" ); // с использованием универсального селектора убираем границы у всех элементов
+            $( "li" ).parents( ".second" ).css( "border", "1px solid green" ); // устанавливаем предкам каждого элемента <li> сплошную границу размером 1 пиксель зеленого цвета в том случае, если предок имеет класс second
+          })
+        });
+            </script>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <button class="parent">parent</button>
+    <button class="parents">parents</button>
+    <button class="filter">parent with filter</button>
+    <button class="filter2">parents with filter</button>
+    <ul>
+        <li>Уровень 1</li>
+        <li>Уровень 1</li>
+        <li>Уровень 1
+            <ul>
+                <li>Уровень 2</li>
+                <li class ="second">Уровень 2</li>
+                <li>Уровень 2
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div id="test"></div>
+
+    <script type="text/javascript">
+        var test = $('#test').html ();
+        alert()
+    </script>
+        <nav class="menu">
+            <ul class="menu_list">
+                <li>
+                    <a href="" class="menu_link">Перый уровень</a>
+                    <ul class="sub-menu_list">
+                        <li>
+                        <a href="" class="sub-menu_link">Второй уровень</a>
+                    </li>
+                    <li>
+                        <a href="" class="sub-menu_link">Второй уровень</a>
+                    </li>
+                    <li>
+                        <a href="" class="sub-menu_link">Второй уровень</a>
+                    </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" class="menu_link">Перый уровень</a>
+                </li>
+                <li>
+                    <a href="" class="menu_link">Перый уровень</a>
+                </li>
+            </ul>
+        </nav>
+        <img src="DeTb6T1WkAEGkGu.jpg" class="vty">
+    </div>
+
+</body>
+</html>
